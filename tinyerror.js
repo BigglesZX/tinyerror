@@ -1,5 +1,10 @@
 (function($, undefined){
     
+    /*
+     * tinystick v.0.1 by BigglesZX
+     * http://github.com/BigglesZX/tinyerror/
+     */
+    
     var TinyError = window.TinyError = function(displayEl, options) {
         this.displayEl = $(displayEl);
         if (options) $.extend(this.options, options);
