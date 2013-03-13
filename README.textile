@@ -1,0 +1,49 @@
+h1. tinyerror
+
+A neat way (or certainly, a way) of abstracting error message management from your JS code.
+
+TE lets you define one element to act as a container for your errors, then your code can use a simple set of shorthand methods to display, overwrite and clear errors, warnings and success messages.
+
+h2. Usage
+
+bc. // Define error container
+var fooElement = $('.errorlist');
+
+bc. // Init
+var MyTinyError = new TinyError(fooElement);
+
+bc. // Init with options
+var MyTinyError = new TinyError(fooElement, {
+    errorEl: 'div',  // use divs instead of li's for each error
+    append: '<i />', // append an <i></i> tag to each message as it's generated
+    prepend: '<b />', // prepend <b></b>
+    messageClasses: { // you can override the default classes applied to the 3 types of message
+        error: 'error',
+        warning: 'warning',
+        success: 'success'
+    }
+});
+
+The @append@ and @prepend@ options are particularly useful for adding stub elements you can later use as containers for icons via CSS.
+
+bc. // Error
+MyTinyError.error('Uh oh!');
+
+bc. // Warning
+MyTinyError.warning('Hmmm');
+
+bc. // Success
+MyTinyError.success('OK!');
+
+bc. // Error with custom type, to group messages
+MyTinyError.error('FooComponent is broke', 'foocomponent');
+
+bc. // Clear all errors
+MyTinyError.clear();
+
+bc. // Clear errors of certain type
+MyTinyError.clear('foocomponent');
+
+bc. // Success superceding (clearing) previous errors of this type
+MyTinyError.success('FooComponent is now fixed!', 'foocomponent', true);
+
