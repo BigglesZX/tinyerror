@@ -1,0 +1,4 @@
+h1. TODO
+
+* Use type string to group messages together when inserting (enabled by option?)
+* When attempting to insert exact duplicate of existing message, flash existing message instead?
