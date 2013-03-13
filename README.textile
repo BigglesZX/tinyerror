@@ -10,10 +10,10 @@ bc. // Define error container
 var fooElement = $('.errorlist');
 
 bc. // Init
-var MyTinyError = new TinyError(fooElement);
+var TE = new TinyError(fooElement);
 
 bc. // Init with options
-var MyTinyError = new TinyError(fooElement, {
+var TE = new TinyError(fooElement, {
     errorEl: 'div',  // use divs instead of li's for each error
     append: '<i />', // append an <i></i> tag to each message as it's generated
     prepend: '<b />', // prepend <b></b>
@@ -27,23 +27,23 @@ var MyTinyError = new TinyError(fooElement, {
 The @append@ and @prepend@ options are particularly useful for adding stub elements you can later use as containers for icons via CSS.
 
 bc. // Error
-MyTinyError.error('Uh oh!');
+TE.error('Uh oh!');
 
 bc. // Warning
-MyTinyError.warning('Hmmm');
+TE.warning('Hmmm');
 
 bc. // Success
-MyTinyError.success('OK!');
+TE.success('OK!');
 
 bc. // Error with custom type, to group messages
-MyTinyError.error('FooComponent is broke', 'foocomponent');
+TE.error('FooComponent is broke', 'foocomponent');
 
 bc. // Clear all errors
-MyTinyError.clear();
+TE.clear();
 
 bc. // Clear errors of certain type
-MyTinyError.clear('foocomponent');
+TE.clear('foocomponent');
 
 bc. // Success superceding (clearing) previous errors of this type
-MyTinyError.success('FooComponent is now fixed!', 'foocomponent', true);
+TE.success('FooComponent is now fixed!', 'foocomponent', true);
 
