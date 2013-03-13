@@ -4,6 +4,8 @@ A neat way (or certainly, a way) of abstracting error message management from yo
 
 TE lets you define one element to act as a container for your errors, then your code can use a simple set of shorthand methods to display, overwrite and clear errors, warnings and success messages.
 
+Requires jQuery, almost certainly unnecessarily at this point.
+
 h2. Usage
 
 bc. // Define error container
